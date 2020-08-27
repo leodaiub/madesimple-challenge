@@ -1,5 +1,5 @@
 <?php
-$DATABASE_URL = parse_url('CLEARDB_DATABASE_URL');
+$DATABASE_URL = parse_url(getenv("CLEARDB_DATABASE_URL"));
 return [
 
     /*
