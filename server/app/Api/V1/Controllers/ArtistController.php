@@ -18,7 +18,6 @@ class ArtistController extends Controller
         $client = new \GuzzleHttp\Client();   
         $request = new HttpRequest('GET', $this->url, [
             'Authorization' => 'Basic ZGV2ZWxvcGVyOlpHVjJaV3h2Y0dWeQ==',
-            'Htaccess' => 'developer:ZGV2ZWxvcGVy'
         ]);
         return $client->send($request);
     }
@@ -34,7 +33,6 @@ class ArtistController extends Controller
         $client = new \GuzzleHttp\Client();   
         $request = new HttpRequest('GET', $this->url . $id, [
             'Authorization' => 'Basic ZGV2ZWxvcGVyOlpHVjJaV3h2Y0dWeQ==',
-            'Htaccess' => 'developer:ZGV2ZWxvcGVy'
         ]);
         return $client->send($request);
     }
