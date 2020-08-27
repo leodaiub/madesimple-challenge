@@ -2,24 +2,32 @@
 
 namespace App\Api\V1\Controllers;
 use App\Http\Controllers\Controller;
+use App\Api\V1\Requests\ArtistRequest;
 use Illuminate\Http\Request;
-use App\Models\Album;
+use App\Models\Artist;
 use GuzzleHttp\Psr7\Request as HttpRequest;
 class ArtistController extends Controller
 {
-    protected $url = 'https://mantle.madesimplegroup.com/artists/';
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $client = new \GuzzleHttp\Client();   
-        $request = new HttpRequest('GET', $this->url, [
-            'Authorization' => 'Basic ZGV2ZWxvcGVyOlpHVjJaV3h2Y0dWeQ==',
-        ]);
-        return $client->send($request);
+        $artists = Artist::all();
+        return $artists;
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(ArtistRequest $request)
+    {
+        return $artist = Artist::create($request->all());
     }
 
     /**
@@ -30,10 +38,31 @@ class ArtistController extends Controller
      */
     public function show($id)
     {
-        $client = new \GuzzleHttp\Client();   
-        $request = new HttpRequest('GET', $this->url . $id, [
-            'Authorization' => 'Basic ZGV2ZWxvcGVyOlpHVjJaV3h2Y0dWeQ==',
-        ]);
-        return $client->send($request);
+        return  $artist = Artist::where('id', $id)->first();
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ArtistRequest $request, $id)
+    {
+        $artist = Artist::where('id', $id);
+        $Artist->update($request->except('_token', '_method'));
+        return $Artist->first();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        return  $artist = Artist::where('id', $id)->delete();
     }
 }
