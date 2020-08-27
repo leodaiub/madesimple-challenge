@@ -47,12 +47,13 @@ export const AlbumForm = (props: Props) => {
 
   useEffect(() => {
     id &&
+      props.album &&
       setFormData({
-        name: props.album?.name,
-        year: props.album?.year,
-        artist_id: props.album?.artist_id,
+        name: props.album.name,
+        year: props.album.year,
+        artist_id: props.album.artist_id,
       });
-  }, [id, props.album]);
+  }, [id, props.album, props.artists]);
 
   return (
     <Container
@@ -128,10 +129,11 @@ export const AlbumForm = (props: Props) => {
 
           <Grid item sm={8} xs={5}>
             <TextField
+              id="artist"
               error={!!props.errors.artist_id}
               helperText={props.errors.artist_id}
               select
-              value={formData.artist_id}
+              value={formData.artist_id || props.album?.artist_id}
               type="text"
               margin="dense"
               variant="outlined"
@@ -145,8 +147,8 @@ export const AlbumForm = (props: Props) => {
                 setFormData({ ...formData, artist_id: e.target.value })
               }
             >
-              {props.artists.map(artist => (
-                <MenuItem key={artist.id} value={artist.id}>
+              {props.artists.map((artist, i) => (
+                <MenuItem key={i} value={artist.id}>
                   {artist.name}
                 </MenuItem>
               ))}
