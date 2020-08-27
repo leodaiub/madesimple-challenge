@@ -35,27 +35,18 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
-
-Here's why:
-
-- Your time should be focused on creating something amazing. A project that solves a problem and helps others
-- You shouldn't be doing the same tasks over and over like creating a README from scratch
-- You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+![Product Name Screen Shot](https://raw.githubusercontent.com/leodaiub/madesimple-challenge/master/client/public/Captura%20de%20Tela_%C3%81rea%20de%20Sele%C3%A7%C3%A3o_20200827182114.png)
 
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-- [Bootstrap](https://getbootstrap.com)
-- [JQuery](https://jquery.com)
 - [Laravel](https://laravel.com)
+- [React](https://reactjs.com)
+- [Redux](https://reactjs.com)
+- [Redux Toolkit](https://reactjs.com)
+- [TypeScript](https://typescript.com)
+- [i18n](https://i18next.com)
 
 <!-- GETTING STARTED -->
 
@@ -71,28 +62,47 @@ This is an example of how to list things you need to use the software and how to
 - npm
 
 ```sh
-npm install npm@latest -g
+sudo apt install nodejs
+```
+- PHP
+
+```sh
+sudo apt-get install php7.0 php7.0-fpm php7.0-mysql -y 
+```
+- Composer
+
+```sh
+sudo apt-get install composer
 ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
 
 ```sh
-git clone https://github.com/leodaiub_/Project-Name.git
+git clone https://github.com/leodaiub/madesimple-challenge.git && cd madesimple-challenge
 ```
 
 3. Install NPM packages
 
 ```sh
-npm install
+cd client && npm install
+```
+4. Star Front-end
+
+```sh
+npm start
 ```
 
-4. Enter your API in `config.js`
+5. Install Composer packages
 
-```JS
-const API_KEY = 'ENTER YOUR API';
+```sh
+cd .. && cd server && composer install
+```
+6. Start Back-end
+
+```sh
+php artisan serve
 ```
 
 <!-- USAGE EXAMPLES -->
