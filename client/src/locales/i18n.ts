@@ -4,11 +4,19 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import en from './en/translation.json';
+import PT_BR from './PT_BR/translation.json';
+import es from './es/translation.json';
 import { ConvertedToObjectType } from './types';
 
 const translationsJson = {
   en: {
     translation: en,
+  },
+  PT_BR: {
+    translation: PT_BR,
+  },
+  es: {
+    translation: es,
   },
 };
 
