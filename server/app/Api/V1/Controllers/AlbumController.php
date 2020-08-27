@@ -38,7 +38,7 @@ class AlbumController extends Controller
      */
     public function show($id)
     {
-        return  $album = Album::where('id', $id)->get();
+        return  $album = Album::where('id', $id)->first();
     }
 
     /**
@@ -50,7 +50,9 @@ class AlbumController extends Controller
      */
     public function update(AlbumRequest $request, $id)
     {
-        return $album = Album::where('id', $id)->update($request->except('_token', '_method'));
+        $album = Album::where('id', $id);
+        $album->update($request->except('_token', '_method'));
+        return $album->first();
     }
 
     /**
