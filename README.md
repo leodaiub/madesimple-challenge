@@ -35,7 +35,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://raw.githubusercontent.com/leodaiub/madesimple-challenge/master/client/public/Captura%20de%20Tela_%C3%81rea%20de%20Sele%C3%A7%C3%A3o_20200827182114.png)
+![Product Name Screen Shot](https://raw.githubusercontent.com/leodaiub/madesimple-challenge/master/client/public/Captura%20de%20Tela_%C3%81rea%20de%20Sele%C3%A7%C3%A3o_20200827182114.png)
 
 ### Built With
 
